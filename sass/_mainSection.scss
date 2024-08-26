@@ -1,0 +1,41 @@
+@use "./utils/_resetCSS" as *;
+@use "./utils/_variables" as *;
+@use "./utils/_components" as *;
+
+.articles {
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.article {
+	max-width: 35rem;
+	margin-bottom: 2em;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 1.5em;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	&__number {
+		font-size: 2.6rem;
+		font-weight: $fw-bold-extra;
+		color: $soft-red;
+	}
+
+	&__heading {
+		font-size: 1.8rem;
+		transition: color 0.3s;
+
+		&:hover,
+		&:focus {
+			cursor: pointer;
+			color: $soft-red;
+		}
+	}
+}

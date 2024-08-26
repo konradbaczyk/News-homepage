@@ -1,0 +1,326 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100svh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2em 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 253, 250);
+  overflow: hidden;
+}
+.navbar__logo {
+  width: 5rem;
+}
+.navbar__logo:focus {
+  outline: 2px solid rgb(241, 94, 80);
+}
+.navbar__btn-toggle-menu {
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../assets/images/icon-menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 100;
+  transition: background 0.3s;
+}
+.navbar__menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 65%;
+  padding-top: 10em;
+  padding-left: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  background-color: rgb(255, 253, 250);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+.navbar__menu--link {
+  padding: 0.5em;
+  font-size: 2rem;
+  transition: color 0.3s;
+}
+.navbar__menu--link:focus, .navbar__menu--link:active, .navbar__menu--link:hover {
+  color: rgb(241, 94, 80);
+}
+.navbar__menu--shadow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(93, 95, 121, 0.3);
+}
+.navbar__menu--active {
+  transform: scaleX(1);
+}
+
+@media (min-width: 576px) {
+  .navbar__logo {
+    width: 7rem;
+  }
+  .navbar__btn-toggle-menu {
+    display: none;
+  }
+  .navbar__menu {
+    position: static;
+    top: 0;
+    right: 0;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-top: 0;
+    padding-left: 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+    transform: scaleX(1);
+  }
+  .navbar__menu--link {
+    font-size: 1.8rem;
+  }
+  .navbar__menu--shadow {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .navbar {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.header {
+  margin-bottom: 2.5em;
+  padding-top: 6em;
+  padding-bottom: 1em;
+}
+.header .hero-section {
+  padding-bottom: 4em;
+}
+.header .hero-section__heading {
+  padding: 0.4em 0;
+  font-size: 4.4rem;
+  font-weight: 800;
+  line-height: 100%;
+}
+.header .hero-section__text {
+  margin-bottom: 2em;
+  color: rgb(93, 95, 121);
+  line-height: 150%;
+}
+.header .hero-section__cta-btn {
+  padding: 0.8em 1.5em;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background-color: rgb(241, 94, 80);
+  transition: background-color 0.3s, color 0.3s;
+}
+.header .hero-section__cta-btn:hover, .header .hero-section__cta-btn:focus {
+  color: rgb(255, 253, 250);
+  background-color: rgb(0, 0, 26);
+}
+.header .news {
+  padding: 1.5em 1em 0 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(255, 253, 250);
+  background-color: rgb(0, 0, 26);
+  scroll-margin-top: 7em;
+}
+.header .news__heading {
+  font-size: 3rem;
+  color: rgb(233, 171, 83);
+}
+.header .news__article {
+  padding: 2em 0;
+  font-weight: 400;
+}
+.header .news__article--heading {
+  margin-bottom: 0.5em;
+  transition: color 0.3s;
+}
+.header .news__article--heading:hover, .header .news__article--heading:focus {
+  color: rgb(233, 171, 83);
+}
+.header .news__article--text {
+  font-weight: 200;
+}
+.header .news__article:nth-of-type(2) {
+  border-top: 1px solid rgb(93, 95, 121);
+  border-bottom: 1px solid rgb(93, 95, 121);
+}
+
+@media (min-width: 992px) {
+  .header {
+    padding-bottom: 2em;
+    display: flex;
+    gap: 2em;
+  }
+  .header .hero-section {
+    max-width: 70%;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 0;
+    display: grid;
+    row-gap: 1.5em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+  }
+  .header .hero-section__hero-img {
+    max-height: 100%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .header .hero-section__heading {
+    padding: 0;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: 5.4rem;
+  }
+  .header .hero-section__text-block {
+    padding: 0 1.5em;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header .hero-section__text {
+    margin-bottom: 0;
+    font-size: 1.6rem;
+  }
+  .header .hero-section__cta-btn {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .header .news {
+    max-width: 30%;
+  }
+  .header .news__heading {
+    font-size: 4.5rem;
+  }
+  .header .news__article {
+    padding: 2em 0;
+    font-weight: 400;
+  }
+  .header .news__article--heading {
+    margin-bottom: 0.5em;
+    transition: color 0.3s;
+  }
+  .header .news__article--heading:hover, .header .news__article--heading:focus {
+    color: rgb(233, 171, 83);
+  }
+  .header .news__article:nth-of-type(2) {
+    border-top: 1px solid rgb(93, 95, 121);
+    border-bottom: 1px solid rgb(93, 95, 121);
+  }
+}
+.articles {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.article {
+  max-width: 35rem;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5em;
+}
+.article__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.article__number {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: rgb(241, 94, 80);
+}
+.article__heading {
+  font-size: 1.8rem;
+  transition: color 0.3s;
+}
+.article__heading:hover, .article__heading:focus {
+  cursor: pointer;
+  color: rgb(241, 94, 80);
+}
+
+body {
+  padding: 2em 1.4em;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  background-color: rgb(255, 253, 250);
+}/*# sourceMappingURL=style.css.map */

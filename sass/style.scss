@@ -1,0 +1,13 @@
+@use "./utils/_resetCSS" as *;
+@use "./utils/_variables" as *;
+@use "./utils/_components" as *;
+@use "./_navigation" as *;
+@use "./_header" as *;
+@use "./_mainSection" as *;
+
+body {
+	padding: 2em 1.4em;
+	font-family: $ff-primary;
+	font-size: 1.5rem;
+	background-color: $off-white;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<title>Frontend Mentor | News homepage</title>
+	</head>
+	<body class="wrapper">
+		<!-- NAVIGATION -->
+		<nav class="navbar wrapper">
+			<a href="#" class="navbar__logo">
+				<img src="./assets/images/logo.svg" alt="Logo" />
+			</a>
+
+			<button class="navbar__btn-toggle-menu" id="btn-toggle-menu"></button>
+
+			<ul class="navbar__menu" id="menu">
+				<div class="navbar__menu--shadow"></div>
+				<li><a href="#" class="navbar__menu--link">Home</a></li>
+				<li><a href="#news" class="navbar__menu--link">New</a></li>
+				<li><a href="#" class="navbar__menu--link">Popular</a></li>
+				<li><a href="#" class="navbar__menu--link">Trending</a></li>
+				<li><a href="#" class="navbar__menu--link">Categories</a></li>
+			</ul>
+		</nav>
+		<!-- NAVIGATION END -->
+
+		<!-- HEADER AREA -->
+		<header class="header">
+			<article class="hero-section">
+				<img src="./assets/images/image-web-3-mobile.jpg" alt="" class="hero-section__hero-img" id="hero-img" />
+
+				<h1 class="hero-section__heading">The Bright Future of Web 3.0?</h1>
+
+				<div class="hero-section__text-block">
+					<p class="hero-section__text">
+						We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it
+						really fulfilling its promise?
+					</p>
+
+					<a href="#" class="hero-section__cta-btn">Read more</a>
+				</div>
+			</article>
+
+			<section class="news" id="news">
+				<h2 class="news__heading">New</h2>
+				<article class="news__article">
+					<h3>
+						<a href="#" class="news__article--heading">Hydrogen VS Electric Cars</a>
+					</h3>
+					<p class="news__article--text">Will hydrogen-fueled cars ever catch up to EVs?</p>
+				</article>
+
+				<article class="news__article">
+					<h3>
+						<a href="#" class="news__article--heading">The Downsides of AI Artistry</a>
+					</h3>
+					<p class="news__article--text">What are the possible adverse effects of on-demand AI image generation?</p>
+				</article>
+
+				<article class="news__article">
+					<h3>
+						<a href="#" class="news__article--heading">Is VC Funding Drying Up?</a>
+					</h3>
+					<p class="news__article--text">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+				</article>
+			</section>
+		</header>
+		<!-- HEADER AREA END-->
+
+		<!-- MAIN SECTION -->
+		<main>
+			<section class="articles">
+				<article class="article">
+					<img src="./assets/images/image-retro-pcs.jpg" alt="Old PC" class="article__img" />
+					<div class="article__content">
+						<p class="article__number">01</p>
+						<h3><a href="#" class="article__heading">Reviving Retro PCs</a></h3>
+						<p class="article__text">What happens when old PCs are given modern upgrades?</p>
+					</div>
+				</article>
+				<article class="article">
+					<img src="./assets/images/image-top-laptops.jpg" alt="Close-up of the black keyboard" class="article__img" />
+					<div class="article__content">
+						<p class="article__number">02</p>
+						<h3><a href="#" class="article__heading">Top 10 Laptops of 2022</a></h3>
+						<p class="article__text">Our best picks for various needs and budgets.</p>
+					</div>
+				</article>
+				<article class="article">
+					<img src="./assets/images/image-gaming-growth.jpg" alt="" class="article__img" />
+					<div class="article__content">
+						<p class="article__number">03</p>
+						<h3><a href="#" class="article__heading">The Growth of Gaming</a></h3>
+						<p class="article__text">How the pandemic has sparked fresh opportunities.</p>
+					</div>
+				</article>
+			</section>
+		</main>
+		<!-- MAIN SECTION END -->
+
+		<script type="module" src="./js/scirpt.js"></script>
+	</body>
+</html>

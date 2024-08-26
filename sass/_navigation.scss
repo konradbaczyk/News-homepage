@@ -1,0 +1,125 @@
+@use "./utils/_resetCSS" as *;
+@use "./utils/_variables" as *;
+@use "./utils/_components" as *;
+
+.navbar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: fit-content;
+	padding: 2em 1.5em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: $off-white;
+	overflow: hidden;
+
+	&__logo {
+		width: 5rem;
+
+		&:focus {
+			outline: 2px solid $soft-red;
+		}
+	}
+
+	&__btn-toggle-menu {
+		width: 4rem;
+		height: 4rem;
+		background-image: url("../assets/images/icon-menu.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: 100;
+		transition: background 0.3s;
+	}
+
+	&__menu {
+		position: fixed;
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: 65%;
+		padding-top: 10em;
+		padding-left: 1em;
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+		background-color: $off-white;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.5s;
+
+		&--link {
+			padding: 0.5em;
+			font-size: 2rem;
+			transition: color 0.3s;
+
+			&:focus,
+			&:active,
+			&:hover {
+				color: $soft-red;
+			}
+		}
+
+		&--shadow {
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background-color: $dark-grayish-blue-shadow;
+		}
+
+		&--active {
+			transform: scaleX(1);
+		}
+	}
+}
+
+// MEDIA QUERIES
+@media (min-width: 576px) {
+	.navbar {
+		&__logo {
+			width: 7rem;
+		}
+
+		&__btn-toggle-menu {
+			display: none;
+		}
+
+		&__menu {
+			position: static;
+			top: 0;
+			right: 0;
+			height: fit-content;
+			width: fit-content;
+			padding-top: 0;
+			padding-left: 0;
+			flex-direction: row;
+			justify-content: center;
+			gap: 0;
+			transform: scaleX(1);
+
+			&--link {
+				font-size: 1.8rem;
+			}
+
+			&--shadow {
+				display: none;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+	.navbar {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+@media (min-width: 1200px) {
+}
